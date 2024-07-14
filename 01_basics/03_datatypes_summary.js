@@ -10,7 +10,7 @@ Primitive datatypes (stored in stack as a copy)
 
 
 
-Non-primitive datatypes
+Non-primitive datatypes (stored in heap hence access by reference)
 1. Array
 2. Object
 3. function
