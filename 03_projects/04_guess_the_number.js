@@ -1,7 +1,15 @@
 const form = document.querySelector('form')
-const guesses = document.getElementsByClassName('lastResult')[0]
-const message = document.getElementsByClassName('lowOrHi')[0]
-const prevGuesses = document.getElementsByClassName('guesses')[0]
+const guessField = document.getElementById('guessField')
+
+// const guesses = document.getElementsByClassName('lastResult')[0]
+const guesses = document.querySelector('.lastResult')
+
+// const message = document.getElementsByClassName('lowOrHi')[0]
+const message = document.querySelector('.lowOrHi')
+
+// const prevGuesses = document.getElementsByClassName('guesses')[0]
+const prevGuesses = document.querySelector('.guesses')  // NOTE: YOU MISSED THE querySelector APPROACH
+
 
 const randomValue = Math.floor(Math.random() * 100) + 1
 console.log(randomValue)
@@ -47,9 +55,15 @@ form.addEventListener('submit', (e) => {
   if (!remainingGuesses || remainingGuesses <= 0) {
     displayText = "GAME OVER"
     gameOver = true;
+
+    // NOTE: YOU MISSED BELOW STEP (CHECK ONCE)
+    guessField.setAttribute('disabled', '')
   }
 
+  // NOTE: YOU MISSED BELOW STEP
+  guessField.value = '' // Do this to empty the input box everytime
+  
   prevGuesses.textContent = previousGuesses
-  message.textContent = displayText
+  message.innerHTML = `<h2>${displayText}</h2>`
   guesses.textContent = parseInt(guesses.innerHTML) - 1
 })
