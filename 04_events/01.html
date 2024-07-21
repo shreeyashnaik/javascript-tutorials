@@ -7,5 +7,19 @@
 </head>
 <body>
     <h1>Chai aur code</h1>
+
+    <button type="button" id="stop">Stop</button>
 </body>
+<script>
+    const changeh1 = setTimeout(()=>{
+        console.log("Shreeyadh");
+    }, 2000)
+
+    const stopMe = document.querySelector("#stop")
+    stopMe.addEventListener("click", () => {
+        clearTimeout(stopMe)
+        console.log("stopped event")
+    }) 
+
+</script>
 </html>

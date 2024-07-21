@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const requestUrl = "https://api.github.com/users/shreeyashnaik";
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestUrl);
+    console.log(xhr.readyState);
+    xhr.send();
+
+    xhr.onreadystatechange = () => {
+        console.log(xhr.readyState)
+
+        if (xhr.readyState === xhr.DONE) {
+            console.log(xhr.responseText);
+        }
+    }
+    // console.log(xhr.readyState);
+</script>
+</html>
