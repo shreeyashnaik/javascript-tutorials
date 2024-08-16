@@ -11,6 +11,12 @@ const Promise1 = new Promise(function(resolve, reject) {
     }, 2000)
 })
 
+// resolve is directly connected to 'then()' while consuming
+// This means, you can call then() on a promise only if the promise is resolved()
+
+// reject is directly connected to 'catch()' while consuming
+// This means, the catch() on a promise will be executed if one of the above then's throw error.
+
 // Consuming promise
 Promise1.then(() => {
     console.log("Promise consumed");
